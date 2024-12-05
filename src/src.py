@@ -6,7 +6,7 @@ def extract_data(Api_key , symbol , url):
     
     try:
         response = req.get(url)
-        response.raise_for_status()  # Raise an exception for HTTP errors
+        response.raise_for_status()  
         data = response.json()
         logging.info("Data fetched successfully.")
         
@@ -91,11 +91,11 @@ db_host = '#your db host address'
 db_port = '#your db port'
 
 logging.basicConfig(
-    level=logging.INFO,  # Set the level of detail for logs (INFO and above will be shown)
-    format='%(asctime)s - %(levelname)s - %(message)s',  # Format of log messages
+    level=logging.INFO,  
+    format='%(asctime)s - %(levelname)s - %(message)s',  
     handlers=[
-        logging.FileHandler("project.log"),  # Save logs to a file named project.log
-        logging.StreamHandler()             # Also print logs to the console
+        logging.FileHandler("project.log"),  
+        logging.StreamHandler()             
     ]
 )
 
